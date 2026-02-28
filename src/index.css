@@ -1,0 +1,904 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
+:root {
+  --blue: #4574E2;
+  --blue-dark: #124BD5;
+  --text: #222222;
+  --gray: #555555;
+  --bg-gray: #F5F5F5;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Pretendard Variable', sans-serif;
+  color: var(--text);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 48px;
+  display: flex;
+  justify-content: left;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  background: none;
+  border: none;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  font-size: 18px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 56px;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding-top: 72px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('/images/main.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg-bars {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  pointer-events: none;
+}
+
+.hero-bar {
+  flex-shrink: 0;
+}
+
+.hero-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 48px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 4.5vw, 64px);
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1.25;
+  margin-bottom: 28px;
+}
+
+.hero-sub {
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 60px;
+}
+
+.hero-btn-group {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+  border-radius: 80px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: clamp(18px, 1.8vw, 28px);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 28px 60px;
+  transition: all 0.25s;
+}
+
+.btn-hero-primary {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text);
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-hero-primary:hover {
+  background: #fff;
+  transform: translateY(-3px);
+}
+
+.btn-hero-secondary {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text);
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-hero-secondary:hover {
+  background: #fff;
+  transform: translateY(-3px);
+}
+
+/* ── INTRO TEXT ── */
+.intro-section {
+  text-align: center;
+  padding: 100px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+
+.intro-section p {
+  font-size: clamp(18px, 2vw, 32px);
+  font-weight: 600;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.intro-section .hl {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* ── TAGLINE BAR ── */
+.tagline-bar {
+  background: linear-gradient(90deg, #3D66C6, #4D7EF1);
+  padding: 120px 48px;
+  text-align: center;
+  color: #fff;
+  font-size: clamp(18px, 2.5vw, 36px);
+  font-weight: 700;
+}
+
+/* ── SELECTOR ── */
+.selector-section {
+  padding: 120px 48px;
+  background: linear-gradient(180deg, var(--bg-gray) 0%, #fff 100%);
+}
+
+.selector-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.selector-inner h2 {
+  font-size: clamp(28px, 3vw, 48px);
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.selector-inner .sub {
+  font-size: clamp(16px, 1.8vw, 28px);
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.selector-inner .sub strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.selector-cards {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  margin-top: 72px;
+  flex-wrap: wrap;
+}
+
+.selector-card {
+  width: 360px;
+  height: 170px;
+  background: #F1F1F1;
+  border-radius: 80px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 3px solid transparent;
+  cursor: pointer;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text);
+  transition: all 0.25s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.selector-card p {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--gray);
+}
+
+.selector-card.active {
+  border-color: var(--blue);
+  background: #E1EBFF;
+}
+
+.selector-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ── SERVICE ── */
+.service-section {
+  padding: 120px 48px;
+}
+
+.service-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.service-inner h2 {
+  font-size: clamp(28px, 3.5vw, 56px);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.service-inner h2 .hl {
+  color: var(--blue-dark);
+}
+
+.service-desc {
+  font-size: clamp(16px, 1.8vw, 28px);
+  color: var(--text);
+  text-align: center;
+  line-height: 1.75;
+  margin-bottom: 72px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-cards {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.service-card {
+  width: 360px;
+  min-height: 480px;
+  border-radius: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+  max-width: 70%;
+  max-height: 60%;
+  object-fit: contain;
+}
+
+.service-card h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Apply CTA inside service */
+.apply-cta-wrap {
+  margin-top: 72px;
+  text-align: center;
+}
+
+.apply-cta-note {
+  font-size: 22px;
+  color: #fff;
+  margin-top: 8px;
+}
+
+.btn-apply {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 60px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  padding: 44px 120px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.25s;
+  width: 100%;
+  max-width: 900px;
+}
+
+.btn-apply:hover {
+  background: var(--blue-dark);
+  transform: translateY(-3px);
+}
+
+/* Form in service area */
+.service-form-box {
+  background: var(--bg-gray);
+  border-radius: 36px;
+  border: 1px solid #D9D9D9;
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+  padding: 60px 80px;
+  max-width: 1100px;
+  margin: 72px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  text-align: left;
+}
+
+.service-form-box img {
+  width: 50%;
+  border-radius: 40px;
+  flex-shrink: 0;
+}
+
+.service-form-box .text-content {
+  flex: 1;
+}
+
+.form-label {
+  font-size: 22px;
+  color: #888;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+  height: 72px;
+  background: #D9D9D9;
+  border: none;
+  border-radius: 30px;
+  padding: 0 40px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 24px;
+  color: var(--text);
+  margin-bottom: 24px;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.form-input:focus {
+  background: #ccc;
+}
+
+.form-input::placeholder {
+  color: #888888;
+}
+
+/* ── PROBLEM ── */
+.problem-section {
+  padding: 140px 48px;
+  background: #F9FAFB;
+}
+
+.problem-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.problem-title {
+  font-size: clamp(25px, 3.5vw, 32px);
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 80px;
+  line-height: 1.3;
+  color: #111;
+}
+
+.problem-title strong {
+  font-weight: 800;
+  color: var(--blue);
+}
+
+.problem-cards {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.problem-card {
+  width: 100%; /* Take full width of parent */
+  max-width: 900px; /* Set a max-width for the single card */
+  background: #fff;
+  padding: 50px 40px;
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column; /* Stack problem-items vertically */
+  gap: 40px; /* Gap between problem-items */
+}
+
+/* Styles for individual problem items within the problem-card */
+.problem-item {
+  display: flex;
+  flex-direction: column; /* Default: image on top, text below */
+  align-items: center;
+  text-align: center;
+  gap: 20px; /* Gap between icon and content within a problem-item */
+}
+
+.problem-item--horizontal {
+  flex-direction: row; /* For image left, text right */
+  align-items: center; /* Vertically center icon and text */
+  gap: 30px; /* Adjust gap for horizontal layout */
+}
+
+.problem-item--horizontal .problem-card-icon {
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.problem-item--horizontal .problem-card-content {
+  flex: 1; /* Allow content to take remaining space */
+  text-align: left; /* Ensure the text content is left-aligned */
+}
+
+.problem-card-icon {
+  width: 120px; /* Fixed width for consistent alignment */
+  height: 120px; /* Fixed height for consistent alignment */
+  object-fit: contain; /* Ensure the image fits within the bounds */
+  margin-right : 50px;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+/* Blue color for specific problem card titles */
+.problem-card-title--blue strong {
+  color: var(--blue);
+}
+
+/* Remaining problem-card styles */
+.problem-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-tag {
+  background: #E1EBFF;
+  color: var(--blue);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.problem-card h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 12px; /* Adjusted from 24px */
+  word-break: keep-all;
+}
+
+.problem-card p {
+  font-size: 20px;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.6;
+}
+
+.problem-card p strong {
+  color: #222;
+  font-weight: 600;
+}
+
+.problem-footer {
+  text-align: center;
+  font-size: clamp(20px, 2vw, 28px);
+  color: var(--gray); /* Changed from #444 */
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 80px; /* Added margin-top to separate from cards */
+}
+
+/* ── CORE VALUES ── */
+.core-section {
+  padding: 0;
+}
+
+.core-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.core-inner h2 {
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 600;
+  margin-bottom: 80px;
+}
+
+.core-inner h2 .hl {
+  color: var(--blue-dark);
+}
+
+.core-cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.core-card {
+  width: 240px;
+  min-height: 480px;
+  background: #F1F1F1;
+  border-radius: 40px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.core-card h3 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.core-card p {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+/* ── PROCESS ── */
+.process-section {
+  padding: 140px 48px;
+  background: #fff;
+}
+
+.process-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.process-title {
+  font-size: clamp(32px, 3.5vw, 52px);
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.process-subtitle {
+  font-size: clamp(18px, 2vw, 24px);
+  color: #666;
+  margin-bottom: 100px;
+}
+
+.process-steps-container {
+  position: relative;
+  margin-top: 80px;
+}
+
+.process-line {
+  position: absolute;
+  top: 40px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: #E5E7EB;
+  z-index: 0;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.process-step-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.step-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.process-step-item:hover .step-circle {
+  background: var(--blue);
+  color: #fff;
+}
+
+.step-num-text {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--blue);
+}
+
+.process-step-item:hover .step-num-text {
+  color: #fff;
+}
+
+.step-info h4 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.step-info p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+/* Responsive for Process & Problem */
+@media (max-width: 1000px) {
+  /* .problem-cards will automatically center the single problem-card due to existing styles */
+  .problem-card { /* This is the single box containing problem-items */
+    width: 100%;
+    max-width: 500px; /* Keep max-width for smaller screens */
+  }
+  .problem-item--horizontal { /* Change horizontal item to vertical on small screens */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .problem-item--horizontal .problem-card-content {
+    text-align: center; /* Center content on small screens */
+  }
+  .process-line {
+    display: none;
+  }
+  .process-steps {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .process-step-item {
+    flex-direction: row;
+    text-align: left;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* ── CONTACT FORM ── */
+.contact-section {
+  padding: 120px 48px;
+  background: linear-gradient(180deg, var(--bg-gray) 0%, #fff 100%);
+}
+
+.contact-box {
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  border: 1px solid #D9D9D9;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 100px;
+  text-align: center;
+}
+
+.contact-box h2 {
+  font-size: clamp(24px, 3vw, 44px);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.contact-desc {
+  font-size: 20px;
+  color: var(--gray);
+  margin-bottom: 48px;
+  line-height: 1.7;
+}
+
+.contact-form {
+  text-align: left;
+}
+
+.btn-submit {
+  width: 100%;
+  height: 72px;
+  margin-top: 16px;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.btn-submit:hover {
+  background: var(--blue-dark);
+  transform: translateY(-3px);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 80px 48px;
+  text-align: center;
+  background: #fafafa;
+}
+
+footer .footer-contact {
+  font-size: 16px;
+  color: var(--gray);
+  line-height: 2;
+}
+
+footer a {
+  color: var(--gray);
+}
+
+footer .copyright {
+  margin-top: 40px;
+  font-size: 16px;
+  color: #aaa;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .nav-inner {
+    padding: 0 24px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  .hero-content {
+    padding: 100px 24px 60px;
+  }
+
+  .hero-img-block {
+    display: none;
+  }
+
+  .intro-section {
+    padding: 60px 24px;
+  }
+
+  .tagline-bar {
+    padding: 48px 24px;
+  }
+
+  .selector-section {
+    padding: 80px 24px;
+  }
+
+  .service-section {
+    padding: 80px 24px;
+  }
+
+  .service-form-box {
+    padding: 40px 28px;
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .service-form-box img {
+    width: 100%;
+  }
+
+  .problem-section {
+    padding: 80px 24px;
+  }
+
+  .core-section {
+    padding: 80px 24px;
+  }
+
+  .process-section {
+    padding: 80px 24px;
+  }
+
+  .contact-section {
+    padding: 80px 24px;
+  }
+
+  .contact-box {
+    padding: 60px 32px;
+  }
+
+  footer {
+    padding: 60px 24px;
+  }
+}
