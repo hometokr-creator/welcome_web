@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './index.css'
 import { submitToGoogleSheets } from './services/GoogleSheetsService'
+import { HiMenu, HiX } from 'react-icons/hi'
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   const [university, setUniversity] = useState('')
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -85,18 +87,25 @@ function App() {
     { title: '안전 관리', desc: '위험 신호를\n놓치지 않는 운영 체계' },
   ]
 
-  const scrollTo = (id) =>
+  const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    setIsMenuOpen(false)
+  }
 
   return (
     <div>
       {/* ═══════════ NAV ═══════════ */}
       <nav className="nav">
         <div className="nav-inner">
-          <button className="nav-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            Home-Together&ensp;&ensp;|&ensp;&ensp;
+          <button className="nav-logo" onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setIsMenuOpen(false); }}>
+            Home-Together
           </button>
-          <div className="nav-links">
+          
+          <button className="nav-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <HiX size={30} /> : <HiMenu size={30} />}
+          </button>
+
+          <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
             <a href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('contact') }}>문의하기</a>
             <a href="#selector" onClick={(e) => { e.preventDefault(); scrollTo('selector') }}>내 상황 선택하기</a>
             <a href="#service" onClick={(e) => { e.preventDefault(); scrollTo('service') }}>서비스 소개</a>
