@@ -2,10 +2,10 @@ import { useState } from 'react'
 import './index.css'
 import { submitToGoogleSheets } from './services/GoogleSheetsService'
 import { HiMenu, HiX } from 'react-icons/hi'
-
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
-  const [userType, setUserType] = useState('guest')   // 'guest' | 'host'
+  const [userType, setUserType] = useState('init')   // | 'init' | 'guest' | 'host'
   const [phone, setPhone] = useState('')
   const [university, setUniversity] = useState('')
   const [loading, setLoading] = useState(false)
@@ -21,6 +21,7 @@ function App() {
         : { role: 'host', phone }
 
       await submitToGoogleSheets(data)
+      alert("신청 완료되었습니다.");
       setSubmitted(true)
     } catch (err) {
       console.error(err)
@@ -108,7 +109,7 @@ function App() {
           <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
             <a href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('contact') }}>문의하기</a>
             <a href="#selector" onClick={(e) => { e.preventDefault(); scrollTo('selector') }}>내 상황 선택하기</a>
-            <a href="#service" onClick={(e) => { e.preventDefault(); scrollTo('service') }}>서비스 소개</a>
+            <a href="#service" onClick={(e) => { e.preventDefault(); scrollTo('intro') }}>서비스 소개</a>
             <a href="#process" onClick={(e) => { e.preventDefault(); scrollTo('process') }}>진행절차</a>
           </div>
         </div>
@@ -139,6 +140,7 @@ function App() {
       </section>
 
       {/* ═══════════ INTRO ═══════════ */}
+      <section id="intro" className="intro">
       <div className="intro-section">
         <p>
           홈투게더는 아파트에 거주하는{' '}
@@ -148,6 +150,7 @@ function App() {
           입주 전–거주 중–퇴거까지 전 과정을 운영 관리하는 주거 서비스입니다.
         </p>
       </div>
+      </section>
 
       {/* ═══════════ TAGLINE BAR ═══════════ */}
       <div className="tagline-bar">
@@ -181,11 +184,14 @@ function App() {
           </div>
         </div>
       </section>
+    
+      {userType !== 'init' && (
+        <>
 
       {/* ═══════════ SERVICE INTRO ═══════════ */}
       <section className="service-section">
         <div className="service-inner">
-          {userType === 'guest' ? (
+          {userType === 'guest' && (
             <>
               <h2>
                 집을 구하는{' '}
@@ -200,7 +206,8 @@ function App() {
                 "조건 괜찮은 집"보다 믿을 수 있는 주거 환경이 더 어려운 시기입니다.
               </p>
             </>
-          ) : (
+          ) }
+          {userType === 'host' && (
             <>
               <h2>
                 집에{' '}
@@ -213,6 +220,7 @@ function App() {
               </p>
             </>
           )}
+          
 
           {/* 서비스 혜택 카드 3개 */}
           <div className="service-cards">
@@ -434,6 +442,9 @@ function App() {
         </p>
         <p className="copyright">© 2026 Home-Together.</p>
       </footer>
+      </>
+    )}
+      <Analytics/>
     </div>
   )
 }
