@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.figma.com)"
+      "WebFetch(domain:www.figma.com)",
+      "mcp__figma__get_design_context",
+      "Bash(cd /Users/taegi/Documents/홈투게더/예창패/public/images && curl -sL \"https://www.figma.com/api/mcp/asset/908611cc-f144-488a-b5b9-f0b3f14678cf\" -o slide_guest_apt.jpg && curl -sL \"https://www.figma.com/api/mcp/asset/ffac5069-38e7-4132-bbd3-a79a53184b41\" -o slide_guest_handshake.jpg && curl -sL \"https://www.figma.com/api/mcp/asset/3a9fd7cd-a852-4dc7-84fe-7ce0166d16c3\" -o slide_guest_interior.jpg && curl -sL \"https://www.figma.com/api/mcp/asset/a8268160-8cfc-448d-bd42-ee6e48a68aa7\" -o slide_guest_consult.jpg && curl -sL \"https://www.figma.com/api/mcp/asset/6d077b27-4335-4afc-beb7-a5fc02faed81\" -o slide_host_verify.jpg && curl -sL \"https://www.figma.com/api/mcp/asset/ea26e865-f11d-4da5-97e6-f1657db0439e\" -o slide_host_kitchen.jpg && curl -sL \"https://www.figma.com/api/mcp/asset/da3f5402-f946-4a93-9d9e-8eaa08b11359\" -o slide_host_consult.jpg && echo \"done\" && ls slide_*.jpg)",
+      "Bash(cd /Users/taegi/Documents/홈투게더/예창패 && npm run build 2>&1 | tail -20)",
+      "Bash(npm run:*)",
+      "Bash(cd /Users/taegi/Documents/홈투게더/예창패/public/images && curl -sL \"https://www.figma.com/api/mcp/asset/3bb46440-6eb4-418a-8a8d-595d1b191344\" -o slide16_guest_apt.jpg && curl -sL \"https://www.figma.com/api/mcp/asset/a51b417b-3413-49fb-8c5d-938e05f28ce9\" -o slide16_guest_handshake.jpg && curl -sL \"https://www.figma.com/api/mcp/asset/a6a06e8d-95b6-4d6f-8cf0-e2a93958c744\" -o slide16_guest_interior.jpg && curl -sL \"https://www.figma.com/api/mcp/asset/c56b449c-c259-4397-b404-90d863ecf304\" -o slide16_guest_consult.jpg && curl -sL \"https://www.figma.com/api/mcp/asset/b5bb6b3e-6990-4d3c-be4b-4f577002dad9\" -o slide16_host_handshake.jpg && curl -sL \"https://www.figma.com/api/mcp/asset/220a369b-4b33-4b83-a480-187906bf4174\" -o slide16_host_kitchen.jpg && curl -sL \"https://www.figma.com/api/mcp/asset/26af376a-fecb-43ad-8d61-68112ed1da69\" -o slide16_host_verify.jpg && echo \"done\")",
+      "Bash(npx playwright:*)",
+      "Bash(brew list:*)",
+      "Bash(python3 -c 'import selenium')"
     ]
   }
 }

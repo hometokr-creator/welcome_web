@@ -144,24 +144,61 @@ function App() {
 
       {/* ═══════════ HERO ═══════════ */}
       <section className="hero">
-        <div className="hero-content">
-          <h2 style={{ fontWeight: 600, marginBottom: 30, fontSize: "25px" }}>Home-together</h2>
+        <div className="hero-slide-bg">
+          <div className="hero-slide-title">
+            <p className="hero-slide-label">홈투게더</p>
+            <h1 className="hero-slide-heading">Home-Together</h1>
+          </div>
 
-          <h1>남는 방은 안전하게, 필요한 방은 합리적으로.</h1>
-          <p className="hero-sub">아파트 빈방과 청년 주거를 연결하고, 거주 과정까지 관리합니다.</p>
-          <div className="hero-btn-group">
-            <button
-              className="btn-hero-primary"
-              onClick={() => { setUserType('guest'); scrollTo('contact') }}
-            >
-              바로 문의하기
-            </button>
-            <button
-              className="btn-hero-secondary"
-              onClick={() => scrollTo('selector')}
-            >
-              내 상황 선택하기
-            </button>
+          {/* ── 슬라이드 카드 (게스트 / 호스트) ── */}
+          <div className="slide-cards">
+            {/* 게스트 카드 */}
+            <div className="slide-card">
+              <p className="slide-card-title">
+                <span className="slide-card-title--blue">방을 구하는</span> 청년이신가요?
+              </p>
+              <p className="slide-card-desc">
+                서울 원룸 평균 월세 60만원 시대,<br />
+                하지만 홈투게더로 <strong className="slide-card-desc--blue">[아파트에서 보증금 없이 월 40만원대 거주]</strong>가 가능합니다.
+              </p>
+              <div className="slide-card-rows">
+                <div className="slide-card-row" style={{ backgroundImage: 'url(/images/slide16_guest_apt.jpg)' }}>
+                  <span>✓ 학교 바로 앞 아파트</span>
+                </div>
+                <div className="slide-card-row" style={{ backgroundImage: 'url(/images/slide16_guest_interior.jpg)' }}>
+                  <span>✓ 검증된 아파트 거주 환경</span>
+                </div>
+                <div className="slide-card-row" style={{ backgroundImage: 'url(/images/slide16_guest_handshake.jpg)' }}>
+                  <span>✓ 생활 규칙 기반 안전한 동거</span>
+                </div>
+                <div className="slide-card-row" style={{ backgroundImage: 'url(/images/slide16_guest_consult.jpg)' }}>
+                  <span>✓ 거주 중 운영 관리 지원</span>
+                </div>
+              </div>
+            </div>
+
+            {/* 호스트 카드 */}
+            <div className="slide-card">
+              <p className="slide-card-title">
+                <span className="slide-card-title--blue">집에 남는 방</span>이 있으신가요?<br />
+                혹은 <span className="slide-card-title--blue">부모님 집에 빈 방</span>이 있나요?
+              </p>
+              <p className="slide-card-desc">
+                남는 방은 그대로 두면 공간의 낭비입니다.<br />
+                남는 방으로 <strong className="slide-card-desc--blue">[1년에 600만원의 용돈을 받으세요!]</strong> 홈투게더는 검증된 청년 연결 + 운영 관리로 안전하게 월세 수입을 만들 수 있도록 돕습니다.
+              </p>
+              <div className="slide-card-rows">
+                <div className="slide-card-row" style={{ backgroundImage: 'url(/images/slide16_host_verify.jpg)' }}>
+                  <span>✓ 신원 검증 기반 입주자 연결</span>
+                </div>
+                <div className="slide-card-row" style={{ backgroundImage: 'url(/images/slide16_host_handshake.jpg)' }}>
+                  <span>✓ 밥 안주셔도 돼요!</span>
+                </div>
+                <div className="slide-card-row" style={{ backgroundImage: 'url(/images/slide16_host_kitchen.jpg)' }}>
+                  <span>✓ 분쟁 예방 운영 관리</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
