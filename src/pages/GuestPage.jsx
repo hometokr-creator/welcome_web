@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 import { IconGenderCardGuest, IconHostVerifyCard, IconManageCardGuest } from '../components/IconCards'
 
 // 아파트 사진 (로컬 이미지)
-const imgApartment   = '/images/apt-photo.jpg'
+const imgApartment = '/images/apt-photo.jpg'
 
 // 피그마 349:79 기반 아파트 블록 일러스트 (390→300 스케일)
 function ApartmentIllustration() {
@@ -30,11 +30,11 @@ function ApartmentIllustration() {
       {/* 오른쪽 높은 건물 */}
       <div style={bldg(164, 50, 130, 292)} />
       {/* 왼쪽 건물 창문 */}
-      {[[100,158],[155,158],[100,195],[155,195],[100,232],[155,232]].map(([x,y],i) => (
+      {[[100, 158], [155, 158], [100, 195], [155, 195], [100, 232], [155, 232]].map(([x, y], i) => (
         <div key={`wl${i}`} style={win(x, y)} />
       ))}
       {/* 오른쪽 건물 창문 */}
-      {[[179,75],[234,75],[179,113],[234,113],[234,150],[234,188],[234,226]].map(([x,y],i) => (
+      {[[179, 75], [234, 75], [179, 113], [234, 113], [234, 150], [234, 188], [234, 226]].map(([x, y], i) => (
         <div key={`wr${i}`} style={win(x, y)} />
       ))}
       {/* 파란 덤불 (왼쪽) */}
@@ -64,16 +64,28 @@ export default function GuestPage() {
                   <p className="intro-text">좁고 비싼 원룸 대신</p>
                   <p className="intro-text">아파트에서</p>
                   <p className="intro-text">더 넓고 안전하게</p>
+                  <div className="intro-spacer" />
+
                 </div>
               </div>
-              <div>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '16px' }}>
                 <img
                   className="apt-photo"
                   src={imgApartment}
                   alt="아파트 단지"
                 />
+
               </div>
+
             </div>
+            <div className="intro-spacer" />
+            <button
+              className="cta-btn"
+              style={{ width: '100%' }}
+              onClick={() => document.getElementById('guest-cta').scrollIntoView({ behavior: 'smooth' })}
+            >
+              문의하기
+            </button>
           </div>
         </section>
 
@@ -185,7 +197,7 @@ export default function GuestPage() {
         </section>
 
         {/* ── 7. 주거 신청하기 CTA ── */}
-        <div className="cta-btn-center">
+        <div className="cta-btn-center" id="guest-cta">
           <div className="container" style={{ textAlign: 'center' }}>
             <p className="cta-title-center">주거 신청하기</p>
             <a

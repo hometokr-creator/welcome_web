@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_figma_figma__get_design_context",
+      "mcp__plugin_figma_figma__get_metadata",
+      "Bash(npm install:*)",
+      "Bash(curl -sI \"https://www.figma.com/api/mcp/asset/4f920eef-aa60-414f-a6e0-ee7917b425fd\")",
+      "Bash(sips -Z 1200 apt-photo.jpg --out apt-photo.jpg)",
+      "mcp__plugin_figma_figma__get_screenshot"
+    ],
+    "additionalDirectories": [
+      "/Users/taegi/Documents/홈투게더/예창패/src"
+    ]
+  }
+}

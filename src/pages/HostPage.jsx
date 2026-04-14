@@ -22,6 +22,13 @@ export default function HostPage() {
               <div className="intro-spacer" />
               <p className="intro-text">밥 제공 없이 방 한 칸만으로도 충분합니다.</p>
               <p className="intro-text">학생은 홈투게더가 관리합니다.</p>
+              <div className="intro-spacer" />
+              <button
+                className="cta-btn"
+                onClick={() => document.getElementById('host-cta').scrollIntoView({ behavior: 'smooth' })}
+              >
+                문의하기
+              </button>
             </div>
           </div>
         </section>
@@ -132,7 +139,7 @@ export default function HostPage() {
         </div>
 
         {/* ── 7. 상담 안내 / CTA ── */}
-        <section className="cta-section">
+        <section className="cta-section" id="host-cta">
           <div className="container">
             <div className="cta-inner">
               <div className="cta-info">
