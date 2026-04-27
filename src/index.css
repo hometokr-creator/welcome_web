@@ -645,3 +645,39 @@ img { display: block; }
     max-width: 260px;
   }
 }
+
+/* ── 호스트 플로팅 문의하기 버튼 ── */
+.floating-cta-btn {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: #124BD5;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  padding: 14px 20px;
+  width: 480px;
+  text-align: center;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(18, 75, 213, 0.45);
+  transition: background 0.18s, box-shadow 0.18s;
+  white-space: nowrap;
+}
+.floating-cta-btn:hover {
+  background: #0f3db0;
+  box-shadow: 0 6px 24px rgba(18, 75, 213, 0.55);
+}
+.floating-cta-btn:active {
+  background: #0d34a0;
+}
+@media (max-width: 560px) {
+  .floating-cta-btn {
+    width: calc(100vw - 48px);
+    font-size: 22px;
+    padding: 12px 16px;
+    bottom: 20px;
+  }
+}
