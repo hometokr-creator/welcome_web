@@ -653,31 +653,264 @@ img { display: block; }
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  background: #124BD5;
-  color: #fff;
-  font-size: 32px;
-  font-weight: 500;
-  padding: 14px 20px;
-  width: 480px;
-  text-align: center;
-  border-radius: 999px;
+  height: 56px;
+  padding: 0 48px;
+  background: var(--blue);
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(49, 130, 246, 0.4);
   text-decoration: none;
-  box-shadow: 0 4px 20px rgba(18, 75, 213, 0.45);
-  transition: background 0.18s, box-shadow 0.18s;
   white-space: nowrap;
+  transition: all 0.18s;
 }
 .floating-cta-btn:hover {
-  background: #0f3db0;
-  box-shadow: 0 6px 24px rgba(18, 75, 213, 0.55);
+  background: var(--blue-dark);
+  box-shadow: 0 6px 28px rgba(49, 130, 246, 0.5);
+  transform: translateX(-50%) translateY(-2px);
 }
 .floating-cta-btn:active {
   background: #0d34a0;
+  transform: translateX(-50%) translateY(0);
 }
 @media (max-width: 560px) {
   .floating-cta-btn {
     width: calc(100vw - 48px);
-    font-size: 22px;
-    padding: 12px 16px;
+    font-size: 16px;
+    padding: 14px 20px;
+    bottom: 20px;
+  }
+}
+
+/* ── 모달 ── */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  padding: 32px 24px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.modal-close:hover {
+  background: #f2f4f6;
+  color: var(--text-dark);
+}
+
+.modal-title {
+  font-size: clamp(18px, 5vw, 22px);
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s;
+  font-family: inherit;
+}
+
+.modal-btn.kakao {
+  background: #ffe500;
+  color: #000;
+}
+
+.modal-btn.kakao:hover {
+  background: #ffd700;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 229, 0, 0.3);
+}
+
+.modal-btn.kakao:active {
+  transform: translateY(0);
+}
+
+.modal-btn.service {
+  background: var(--blue);
+  color: white;
+}
+
+.modal-btn.service:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(49, 130, 246, 0.3);
+}
+
+.modal-btn.service:active {
+  transform: translateY(0);
+}
+
+/* 모바일에서만 전화 버튼 표시 */
+.modal-btn.phone-only {
+  background: #1f2937;
+  color: white;
+  display: flex;
+}
+
+.modal-btn.phone-only:hover {
+  background: #111827;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.modal-btn.phone-only:active {
+  transform: translateY(0);
+}
+
+/* 데스크톱에서는 전화 버튼 숨김 */
+@media (min-width: 901px) {
+  .modal-btn.phone-only {
+    display: none;
+  }
+}
+
+/* 모바일에서는 전화 버튼 표시 */
+@media (max-width: 900px) {
+  /* 기본적으로 표시됨 */
+}
+
+/* ── 카카오 플로팅 버튼 ── */
+.kakao-floating-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 56px;
+  height: 56px;
+  background: #ffe500;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 20px rgba(255, 229, 0, 0.4);
+  text-decoration: none;
+  z-index: 999;
+  transition: all 0.18s;
+  border: none;
+}
+
+.kakao-floating-btn:hover {
+  background: #ffd700;
+  box-shadow: 0 6px 28px rgba(255, 229, 0, 0.5);
+  transform: scale(1.1);
+}
+
+.kakao-floating-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 560px) {
+  .kakao-floating-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* ── 게스트 페이지 플로팅 버튼 (매물 찾아보기) ── */
+.floating-property-btn {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  height: 56px;
+  padding: 0 48px;
+  background: var(--blue);
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(49, 130, 246, 0.4);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.18s;
+}
+
+.floating-property-btn:hover {
+  background: var(--blue-dark);
+  box-shadow: 0 6px 28px rgba(49, 130, 246, 0.5);
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.floating-property-btn:active {
+  background: #0d34a0;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 560px) {
+  .floating-property-btn {
+    width: calc(100vw - 48px);
+    font-size: 16px;
+    padding: 14px 20px;
     bottom: 20px;
   }
 }

@@ -1,8 +1,11 @@
+import { useState } from 'react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import { IconVerifyCard, IconGenderCardHost, IconManageCardHost, HouseCard } from '../components/IconCards'
 
 export default function HostPage() {
+  const [showModal, setShowModal] = useState(false)
+
   return (
     <>
       <Nav />
@@ -141,14 +144,12 @@ export default function HostPage() {
                 <p className="cta-phone">010-4587-9428</p>
                 <p className="cta-desc">전화로 바로 문의가 가능합니다.</p>
               </div>
-              <a
+              <button
                 className="cta-btn"
-                href="https://smore.im/form/ylJRnHRtlq"
-                target="_blank"
-                rel="noreferrer"
+                onClick={() => setShowModal(true)}
               >
                 호스트 상담 신청하기
-              </a>
+              </button>
             </div>
           </div>
         </section>
@@ -156,13 +157,45 @@ export default function HostPage() {
       </div>
       <Footer />
 
+      {/* ── 선택 모달 ── */}
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="modal-close"
+              onClick={() => setShowModal(false)}
+            >
+              ✕
+            </button>
+            <h3 className="modal-title">어떤 방식으로 상담받으시겠어요?</h3>
+            <div className="modal-buttons">
+              {/* 모바일에서만 전화 버튼 표시 */}
+              <a
+                href="tel:010-4587-9428"
+                className="modal-btn phone-only"
+              >
+                전화로 상담받기
+              </a>
+              <a
+                href="http://pf.kakao.com/_BKlhX/chat"
+                target="_blank"
+                rel="noreferrer"
+                className="modal-btn kakao"
+              >
+                카카오 채팅으로 상담받기
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* ── 고정 플로팅 문의하기 버튼 ── */}
-      <a
-        href="tel:010-4587-9428"
+      <button
+        onClick={() => setShowModal(true)}
         className="floating-cta-btn"
       >
         문의하기
-      </a>
+      </button>
     </>
   )
 }

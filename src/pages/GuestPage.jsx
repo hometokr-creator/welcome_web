@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import { IconGenderCardGuest, IconHostVerifyCard, IconManageCardGuest } from '../components/IconCards'
@@ -46,6 +47,8 @@ function ApartmentIllustration() {
 }
 
 export default function GuestPage() {
+  const [showModal, setShowModal] = useState(false)
+
   return (
     <>
       <Nav />
@@ -199,20 +202,60 @@ export default function GuestPage() {
         {/* ── 7. 주거 신청하기 CTA ── */}
         <div className="cta-btn-center" id="guest-cta">
           <div className="container" style={{ textAlign: 'center' }}>
-            <p className="cta-title-center">주거 신청하기</p>
-            <a
+            <p className="cta-title-center">내 주변 매물 알아보기</p>
+            <button
               className="cta-btn"
-              href="https://smore.im/form/S9qcizY9E2"
-              target="_blank"
-              rel="noreferrer"
+              onClick={() => setShowModal(true)}
+              style={{ width: 'auto', display: 'inline-block' }}
             >
-              홈투게더 서비스 신청
-            </a>
+              내 주변 매물 알아보기
+            </button>
           </div>
         </div>
 
       </div>
       <Footer />
+
+      {/* ── 고정 플로팅 버튼 (매물 찾아보기) ── */}
+      <button
+        onClick={() => setShowModal(true)}
+        className="floating-property-btn"
+      >
+        매물 찾아보기
+      </button>
+
+      {/* ── 선택 모달 ── */}
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="modal-close"
+              onClick={() => setShowModal(false)}
+            >
+              ✕
+            </button>
+            <h3 className="modal-title">어떤 방식으로 진행하시겠어요?</h3>
+            <div className="modal-buttons">
+              <a
+                href="http://pf.kakao.com/_BKlhX/chat"
+                target="_blank"
+                rel="noreferrer"
+                className="modal-btn kakao"
+              >
+                카카오 채팅으로 문의하기
+              </a>
+              <a
+                href="https://smore.im/form/S9qcizY9E2"
+                target="_blank"
+                rel="noreferrer"
+                className="modal-btn service"
+              >
+                서비스 신청하기
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   )
 }

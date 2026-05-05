@@ -18,6 +18,17 @@ function Landing() {
     <>
       <Nav />
 
+      {/* ── 카카오 상담 플로팅 버튼 ── */}
+      <a
+        href="http://pf.kakao.com/_BKlhX/chat"
+        target="_blank"
+        rel="noreferrer"
+        className="kakao-floating-btn"
+        title="카카오 채팅으로 상담받기"
+      >
+        💬
+      </a>
+
       {/* ── Hero Split ── */}
       <div className="hero-split">
         <div className="hero-panel host-panel">
